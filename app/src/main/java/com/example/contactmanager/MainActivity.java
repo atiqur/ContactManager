@@ -19,7 +19,13 @@ public class MainActivity extends AppCompatActivity {
         Contact shehnaz = new Contact();
         shehnaz.setName("Shehnaz Rahman");
         shehnaz.setPhoneNumber("9707785851");
-        db.addContact(shehnaz);
+        //db.addContact(shehnaz);
+
+        Contact c = db.getContact(2);
+        c.setName("Shehnaz Begum");
+        c.setPhoneNumber("8787794519");
+        int updateRow = db.updateContact(c);
+        Log.d("Main", "onCreate: " + "id: " + c.getId() + " Name: " + c.getName() + " Phone: " + c.getPhoneNumber());
 
         List<Contact> contactList;
 
